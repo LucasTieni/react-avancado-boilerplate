@@ -2,9 +2,9 @@ name: ci
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
   push:
-    branches: [ main ]
+    branches: [ develop ]
   workflow_call:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-      
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -29,9 +29,9 @@ jobs:
 
       - name: Linting
         run: yarn lint
-        
+
       - name: Test
         run: yarn test
-        
+
       - name: Build
         run: yarn build
