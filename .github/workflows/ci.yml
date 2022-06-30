@@ -1,6 +1,11 @@
 name: ci
 
-on: [ pull_request ]
+on:
+  pull_request:
+    branches: [ develop ]
+  push:
+    branches: [ develop ]
+  workflow_call:
 
 jobs:
   build:
